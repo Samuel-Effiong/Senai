@@ -1,421 +1,495 @@
-
 {% load static %}
 {% load extra_tags %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>{{ company_name }}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<meta name="keywords" content="Onepage Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+  <title>{{ company_name }}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-{#<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>#}
-<link href="{% static 'assets/css/portfolio/bootstrap.css' %}" rel='stylesheet' type='text/css'/>
-<link href="{% static 'assets/css/portfolio/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{% static 'assets/js/portfolio/jquery.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'assets/js/portfolio/move-top.js' %}"></script>
-<script type="text/javascript" src="{% static 'assets/js/portfolio/easing.js' %}"></script>
- <script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-			});
-		});
-	</script>
+  <!-- Favicons -->
+  <link href="{% static 'assets/images/portfolio/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/images/portfolio/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/portfolio/style.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/portfolio/site_wide.css' %}" rel="stylesheet">
+
+
+  <!-- =======================================================
+  * Template Name: Groovin - v4.9.0
+  * Template URL: https://bootstrapmade.com/groovin-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
+
 <body>
-<div class="header" id="head">	
-      <div class="container"> 
-         <div class="header-top">
-      		 <div class="logo">
-				<a href="{% url 'senai' %}"><img src="{% static 'assets/images/portfolio/logo.png' %}" alt=""/></a>
-			 </div>
-		   <div class="top-menu">
-		   	<span class="menu"> </span>
-			<ul>
-			 	<nav class="cl-effect-5">
-				<li><a class="active" href="index.html"><span data-hover="Home">home</span></a></li>
-				<li><a href="#about" class="scroll"><span data-hover="about">about</span></a></li>
-				<li>
-                    <a href="#work" class="scroll"><span data-hover="work">
-                        <span>work</span></a></li>
-				<li><a href="#services" class="scroll"><span data-hover="services">services</span></a></li>
-				<li><a href="#contact" class="scroll"><span data-hover="contact">contact</span></a></li>
-				</nav>
-			 </ul>
-			 </div>
-			 <!--script-nav-->
-		 <script>
-		 $("span.menu").click(function(){
-		 $(".top-menu ul").slideToggle("slow" , function(){
-		 });
-		 });
-		 </script>
-			<div class="clearfix"></div>
-		 </div>  
-		  <div class="index-banner">
-       	   <div class="wmuSlider example1">
-			   <div class="wmuSliderWrapper">
-				   <article style="position: absolute; width: 100%; opacity: 0;"> 
-				   	<div class="banner-wrap">
-				   	       	<div class="banner_center">
-				   		 		<h1>hello,</h1>
-				   		 		<h2>Create <span>Top quality</span></h2>
-				   		 		<h2>Software</h2>
-				   		 		</div>
-				   		 </div>
-					</article>
-				   <article style="position: relative; width: 100%; opacity: 1;"> 
-				   	   	<div class="banner-wrap">
-				   	      <div class="banner_center">
-				   		 		<h1>Build</h1>
-				   		 		<h2>Efficient <span>Data-driven</span></h2>
-				   		 		<h2>Websites</h2>
-				   		 		</div>
-				   		  </div>
-				   </article>
-				   <article style="position: absolute; width: 100%; opacity: 0;">
-				   	  	<div class="banner-wrap">
-				   	       <div class="banner_center">
-				   		 		<h1>Analyze,</h1>
-				   		 		<h2>and make<span> Informed Decision</span></h2>
-				   		 		<h2>from datasets</h2>
-				   		 		</div>
-				   		 </div>
-					 </article>
-				 </div>
-				
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+{#      <h1 class="logo"><a href="{% url 'senai' %}">Senai</a></h1>#}
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo"><img src="{% static 'assets/images/logo.png' %}" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url({% static 'assets/images/portfolio/slide/slide-growth-1.jpg' %});">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Grow Your Business</h2>
+                <p class="animate__animated animate__fadeInUp">
+                    Maximise your business potential and stay ahead of your competition with our
+                    Data science services by making sense of your data to get insights that help
+                    you make better decisions and also build specialized chatbot to answer every customer
+                    request 24/7 on social platform.
+                </p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+              </div>
             </div>
-            <script src="{% static 'assets/js/portfolio/jquery.wmuSlider.js' %}"></script>
-			  <script>
-       			$('.example1').wmuSlider();         
-   		     </script> 	           	      
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url({% static 'assets/images/portfolio/slide/slide-efficient-1.jpg' %});">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Build Efficient Websites</h2>
+                <p class="animate__animated animate__fadeInUp">
+                    Develop customized Backend solutions that keep your website running efficiently
+                    and securely&mdash;the technical stuff&mdash; leaving you to focus on what you do best.
+                </p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background-image: url({% static 'assets/images/portfolio/slide/slide-traffic-2.jpg' %});">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Increase Traffic to Your Websites</h2>
+                <p class="animate__animated animate__fadeInUp">
+                    You'll be surprised how effective a well-written article can be in driving traffic
+                    and we provide high quality articles for technical subjects.
+                </p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
       </div>
-	 </div>     
-	</div>
-	<div class="content">
-		<div class="about-section" id="about" id="about">
-	<div class="container">
-		<div class="about-header">
-			<h3>about</h3>
-			<div class="about-imag">
-			<img src="{% static 'assets/images/portfolio/pic-9.jpg' %}" alt=""/>
-			</div>
-			<div class="about-text">
-					<p>
-                        With the explosion of efficient AI technologies, {{ company_name }} was founded
-                        with the aim to integrate this amazing technologies into your websites! making
-                        efficient use of your dataset...that has been left in storage. <br><br>
+    </div>
+  </section><!-- End Hero -->
 
-                        We make data-driven websites and make analysis on your datasets that you can trust
-                        to make profitable decisions.
-                    </p>
-			</div>
-			<div class="clearfix"></div>
-			</div>
-	<div class="arrow1">
-	<a href="#work" class="scroll"><img src="{% static 'assets/images/portfolio/arrow1.png' %}" alt=""/></a>
-					</div>
-	</div>
-	</div>
-	<!-- about-section-ends -->
-	<div class="works-section" id="work" id="work">
-	   <div class="works-header">
-			<h3>works</h3>
-		</div>
-		<div class="portfolio-section-bottom-row" id="portfolio">
-			<div class="container">
-				
-						<script src="{% static 'assets/js/portfolio/easyResponsiveTabs.js' %}" type="text/javascript"></script>
-					<script type="text/javascript">
-						$(document).ready(function () {
-							$('#horizontalTab').easyResponsiveTabs({
-								type: 'default', //Types: default, vertical, accordion           
-								width: 'auto', //auto or any width like 600px
-								fit: true   // 100% fit in a container
-							});
-						});
-						
-					</script>
-						<link rel="stylesheet" href="{% static 'assets/css/portfolio/swipebox.css' %}">
-							<script src="{% static 'assets/js/portfolio/jquery.swipebox.min.js' %}"></script>
-								<script type="text/javascript">
-									jQuery(function($) {
-										$(".swipebox").swipebox();
-									});
-								</script>
-							<!-- Portfolio Ends Here -->
-						<div class="sap_tabs">
-							<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-								  <ul class="resp-tabs-list">
-									  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>All</span></li>
-									  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Data Science</span></li>
-									  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Backend Development</span></li>
-									  <li class="resp-tab-item" aria-controls="tab_item-3" role="tab"><span>Articles</span></li>
-									  <li class="resp-tab-item" aria-controls="tab_item-4" role="tab"><span>Photography</span></li>
-									  <div class="clearfix"></div>
-								  </ul>
-								<div id="portfoliolist">
-									<div class="resp-tabs-container">
-										<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-											<div class="tab_img">
-                                                {% for item in data_analysis %}
-                                                    <div class="col-md-3 img-top grid_box">
-                                                        <a href="{{ item.thumbnail }}" class="swipebox"  title="Image Title">
-                                                          <img src="{{ item.thumbnail }}" class="img-responsive" alt="">
-                                                          <span class="zoom-icon"></span>
-                                                        </a>
-                                                    </div>
-                                                {% endfor %}
-                                                <div class="col-md-3 img-top grid_box">
-                                                    <a href="{% static 'assets/images/portfolio/pic-1.jpg' %}" class="swipebox"  title="Image Title">
-                                                      <img src="{% static 'assets/images/portfolio/pic-1.jpg' %}" class="img-responsive" alt="">
-                                                      <span class="zoom-icon"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3 img-top grid_box">
-                                                    <a href="{% static 'assets/images/portfolio/pic-2.jpg' %}" class="swipebox"  title="Image Title">
-                                                          <img src="{% static 'assets/images/portfolio/pic-2.jpg' %}" class="img-responsive" alt="">
-                                                          <span class="zoom-icon"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3 img-top grid_box">
-                                                    <a href="{% static 'assets/images/portfolio/pic-4.jpg' %}" class="swipebox"  title="Image Title">
-                                                          <img src="{% static 'assets/images/portfolio/pic-3.jpg' %}" class="img-responsive" alt="">
-                                                          <span class="zoom-icon"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3 img-top grid_box">
-                                                    <a href="{% static 'assets/images/portfolio/pic-4.jpg' %}" class="swipebox"  title="Image Title">
-                                                          <img src="{% static 'assets/images/portfolio/pic-4.jpg' %}" class="img-responsive" alt="">
-                                                          <span class="zoom-icon"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3 img-top grid_box">
-                                                    <a href="{% static 'assets/images/portfolio/pic-5.jpg' %}" class="swipebox"  title="Image Title">
-                                                          <img src="{% static 'assets/images/portfolio/pic-5.jpg' %}" class="img-responsive" alt="">
-                                                          <span class="zoom-icon"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3 img-top grid_box">
-                                                    <a href="{% static 'assets/images/portfolio/pic-6.jpg' %}" class="swipebox"  title="Image Title">
-                                                          <img src="{% static 'assets/images/portfolio/pic-6.jpg' %}" class="img-responsive" alt="">
-                                                          <span class="zoom-icon"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3 img-top grid_box">
-                                                    <a href="{% static 'assets/images/portfolio/pic-7.jpg' %}" class="swipebox"  title="Image Title">
-                                                          <img src="{% static 'assets/images/portfolio/pic-7.jpg' %}" class="img-responsive" alt="">
-                                                          <span class="zoom-icon"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-3 img-top grid_box">
-                                                    <a href="{% static 'assets/images/portfolio/pic-8.jpg' %}" class="swipebox"  title="Image Title">
-                                                          <img src="{% static 'assets/images/portfolio/pic-8.jpg' %}" class="img-responsive" alt="">
-                                                          <span class="zoom-icon"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="clearfix"></div>
-											</div>
-																				 
-										</div>
-										<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-											<div class="tab_img">
-												<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-5.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-5.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span>
-														</a>
-													</div>
-													<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-6.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-6.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span>
-														</a>
-													</div>
-													<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-7.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-7.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span>
-														</a>
-													</div>
-													<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-8.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-8.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span>
-														</a>
-													</div>
+  <main id="main">
 
-													<div class="clearfix"></div>
-											</div>	 	        					 
-										</div>
-										<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
-											
-											<div class="tab_img">
-													<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-2.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-2.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span> 
-														</a>
-													</div>
-													<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-3.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-3.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span> 
-														</a>
-													</div>
-													<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-4.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-4.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span> 
-														</a>
-													</div>
-													
-														<div class="clearfix"></div>
-											</div>		        					 
-										</div>
-										<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-3">
-											<div class="tab_img">
-													<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-1.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-1.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span> 
-														</a>
-													</div>
-													<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-2.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-2.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span> 
-														</a>
-													</div>
-													
-														<div class="clearfix"></div>
-											</div>	
-										</div>
-										<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-4">
-											<div class="tab_img">
-													<div class="col-md-3 img-top grid_box">
-														<a href="{% static 'assets/images/portfolio/pic-1.jpg' %}" class="swipebox"  title="Image Title">
-															  <img src="{% static 'assets/images/portfolio/pic-1.jpg' %}" class="img-responsive" alt="">
-															  <span class="zoom-icon"></span> 
-														</a>
-													</div>
-													
-														<div class="clearfix"></div>
-											</div>	
-										</div>										
-									</div>	
-								</div>
-							</div>
-						</div>				
- 
-				<div class="arrow">
-					<a href="#services" class="scroll"><img src="{% static 'assets/images/portfolio/arrow.png' %}" alt=""/></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- portfolio-section-ends -->
-	<div class="services-section" id="services">
-			<div class="container"> 
-			<div class="services-header">
-				<h3>services</h3>
-					<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. </p>
-			</div>
-			<div class="services-sectiongrids">
-				<div class="col-md-4 services-grid">
-					<img src="{% static 'assets/images/portfolio/img1.png' %}" alt=""/>
-					<h4>Data Science</h4>
-					<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.</p>
-				</div>
-				<div class="col-md-4 services-grid">
-					<img src="{% static 'assets/images/portfolio/img2.png' %}" alt=""/>
-					<h4>Backend Development</h4>
-					<p>
-                        Build data-driven websites from the ground up with AI capabilities
-                    </p>
-				</div>
-				<div class="col-md-4 services-grid">
-					<img src="{% static 'assets/images/portfolio/img3.png' %}" alt=""/>
-					<h4>Articles</h4>
-					<p>Drive client to your website with amazing articles</p>
-				</div>
-				<div class="clearfix"></div>
-				<div class="arrow1">
-					<a href="#contact" class="scroll"><img src="{% static 'assets/images/portfolio/arrow1.png' %}" alt=""/></a>
-					</div>
-		</div>
-		</div>
-		</div>
-		<!-- services-section-ends -->
-	</div>
-	<div class="footer-section" id="contact" id="contact">
-			<div class="container"> 
-			<div class="contact-header">
-				<h3> contact</h3>
-					<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. </p>
-			</div>
-			<div class="social-icon">
-				<a href="#"><i class="icon1"></i></a>
-				<a href="#"><i class="icon2"></i></a>
-				<a href="#"><i class="icon3"></i></a>
-				<a href="#"><i class="icon4"></i></a>
-				<a href="#"><i class="icon5"></i></a>
-				<a href="#"><i class="icon6"></i></a>
-				<a href="#"><i class="icon7"></i></a>
-				<a href="#"><i class="icon8"></i></a>
-			</div>
-			<div class="contact">
-				<form>
-					<div class="col-md-4 contactgrid">
-						<input type="text" class="text" value=" name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' name';}">
-					</div>
-					<div class="col-md-4 contactgrid">
-						<input type="text" class="text" value="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email';}">
-					</div>
-					<div class="col-md-4 contactgrid">
-						<input type="text" class="text" value="phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'phone';}">
-					</div>
-					<div class="col-md-8 contactgrid1">
-						<textarea onfocus="if(this.value == 'Your Message') this.value='';" onblur="if(this.value == '') this.value='Your Message';" >Your Message</textarea>
-					</div>
-					<div class="col-md-4 contactgrid2">
-						<input type="submit" value="[send message]">
-					</div>
-				   <div class="clearfix"></div>
-				</form>
-			</div>
-			<div class="footer-bottom">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
 
-					<p>&copy; 2015 Onepage . All rights  Reserved | Template by<a href="http://templatestock.com" target="target_blank">Template Stock</a></p>
+        <div class="row no-gutters">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
+          <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
+            <div class="content d-flex flex-column justify-content-center">
+              <h3>ABOUT US</h3>
+              <p>
+                  SENAI as an emerging AI start-up was founded with the aim of developing Softwares/Bot and Websites that are more
+                  efficient and interactive by integrating state of the art AI technologies into your applications, making
+                  them perform more efficiently and intelligently.
+              </p><br>
+              <p>
+                  We make data-driven websites and make analysis on your datasets that you can trust to make
+                  profitable decisions. Also we build telegram chatbot to moderate or automatically notify users
+                  on any telegram group you add it to...or any function you want it to.
+              </p>
+              <div class="row">
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-shield"></i>
+                  <h4>Efficient & Secure</h4>
+                  <p>Build highly secured software efficiently</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-run"></i>
+                  <h4>On Time Delivery</h4>
+                  <p>We ensure to deliver on time... except where security is at stake</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-dollar-circle"></i>
+                  <h4>Integrity</h4>
+                  <p>Our integrity is our highest valuable commodity</p>
+                </div>
+                <div class="col-md-6 icon-box">
+                  <i class="bx bx-bot"></i>
+                  <h4>Customized Chatbots</h4>
+                  <p>Create Specialized bots for your Telegram platform</p>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
 
-					</div>
-					<script type="text/javascript">
-						$(document).ready(function() {
-							/*
-							var defaults = {
-					  			containerID: 'toTop', // fading element id
-								containerHoverID: 'toTopHover', // fading element hover id
-								scrollSpeed: 1200,
-								easingType: 'linear' 
-					 		};
-							*/
-							
-							$().UItoTop({ easingType: 'easeOutQuart' });
-							
-						});
-					</script>
-				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-</div>
+      </div>
+    </section><!-- End About Section -->
 
-		</div>		
-	</div>
-	
-	
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Why Us</h2>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box">
+              <span>01</span>
+              <h4>Data Science</h4>
+              <p>Transform your Business with actionable insights with our Data Science services.</p><br>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+              <span>02</span>
+              <h4>Backend Development</h4>
+              <p>
+                  Develop your website quickly and efficiently using the latest technology
+                  for state-of-the-art functionality
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+              <span>03</span>
+              <h4>Articles</h4>
+              <p>
+                  Quality article writing that boost your SEO and drives traffic to your website<br><br>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>
+              Check out the cool projects we have worked on!
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-data_science">Data Science</li>
+              <li data-filter=".filter-app">Backend</li>
+              <li data-filter=".filter-articles">Articles</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+            {% for item in portfolio|ravel_zip %}
+                {% if item.category == 'Data Science' %}
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-data_science">
+                {% elif item.category == 'Article' %}
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-articles">
+                {% endif %}
+                    <div class="portfolio-wrap">
+                    <img src="{{ item.thumbnail.url }}" class="img-fluid" width="800" height="600" alt="">
+                    <div class="portfolio-info">
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.category }}</p>
+                    <div class="portfolio-links">
+                      <a href="{{ item.thumbnail.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ item.title }}">
+                          <i class="bx bx-plus"></i>
+                      </a>
+                      <a href="{{ item.get_absolute_url }}" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Team Section ======= -->
+
+    <!-- ======= Pricing Section ======= -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>
+              Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.
+              Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
+              Quia fugiat sit in iste officiis commodi quidem hic quas.
+          </p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <address>No 15 Itu Road, Uyo, Nigeria</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="bi bi-phone"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+2349035018948">+234 903 5018 948</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:samueleffiong80@gmail.com">samueleffiong80@gmail.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <form action="{% url 'send-email' %}" role="form" class="php-email-form">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+            {% csrf_token %}
+          </form>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>SENAI</h3>
+              <p>
+                No 15 Itu Road <br>
+                Uyo, Nigeria <br><br>
+                <strong>Phone:</strong> +234 903 5018 948<br>
+                <strong>Email:</strong> samueleffiong80@gmail.com<br>
+              </p>
+{#              <div class="social-links mt-3">#}
+{#                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>#}
+{#                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>#}
+{#                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>#}
+{#                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>#}
+{#                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>#}
+{#              </div>#}
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Data Science</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Backend Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Articles</a></li>
+              <li><i class="bx bx-chevron-right"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModalCenteredScrollable">Django Masterclass</a></i></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Data Science Masterclass (Coming soon!)</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Join Us to be notified when we add new contents!</p>
+            <form>
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+              {% csrf_token %}
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+          {% include 'include/copyright.html' %}
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div class="modal fade" id="exampleModalCenteredScrollable" tabindex="-1" aria-labelledby="exampleModalCenteredScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenteredScrollableTitle">Django Full Stack Masterclass</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <h6><b>Prerequisite:</b></h6>
+                  <ul>
+                      <li>Basic Knowledge of python</li>
+                  </ul>
+                  <br>
+                  <p>
+                      Welcome to Django Masterclass, in this course we are going to go into details
+                      of creating dynamic web application with django from scratch, and
+                      build real world projects as you learn and get a certificate on successful
+                      completion of the program.
+
+                      We will also teach you Front End technologies you'll need to know to be able
+                      to manipulate web pages on the Front End, which will include HTML, CSS, and
+                      Javascript. This course is one-stop for everything you will need to become a
+                      backend developer
+                  </p>
+
+                  <ol>
+                      <li>HTML5</li>
+                      <li>CSS3</li>
+                      <li>Javascript</li>
+                      <li>Django
+                          <ul>
+                              <li>Django Basics</li>
+                              <li>Django Views</li>
+                              <li>Django Template Language</li>
+                              <li>Django Forms, Model and ModelForm</li>
+                              <li>Django Admin and Admin customization</li>
+                              <li>Connecting to Database (Postgre, MySQL, etc)</li>
+                              <li>Django Class Based Views</li>
+                              <li>User Authentications</li>
+                              <li>Deployment</li>
+                          </ul>
+                      </li>
+                  </ol>
+                  <p>Register <a href="#">here</a> to begin your classes</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/portfolio/main.js' %}"></script>
+
 </body>
+
 </html>

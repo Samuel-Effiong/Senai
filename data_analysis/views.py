@@ -9,7 +9,6 @@ COMPANY_NAME = 'SENAI'
 
 
 class DataAnalysisView(TemplateView):
-    template_name = 'data_analysis/index.html'
 
     def setup(self, request, *args, **kwargs):
         super(DataAnalysisView, self).setup(request, args, kwargs)

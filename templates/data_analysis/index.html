@@ -1,14 +1,17 @@
 {% load static %}
 {% load extra_tags %}
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head>
-<title>{{ data.title }}</title>
+<title>{{ company_name }}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css" href="{% static 'assets/css/portfolio/data_analysis/style.css' %}" />
-<!--[if lte IE 6]>
-<link rel="stylesheet" type="text/css" href="{% static 'assets/css/portfolio/data_analysis/ie6.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/portfolio/code_themes/monokai.css' %}" >
+    {#<link rel="stylesheet" type="text/css" href="{% static 'assets/css/portfolio/code_themes/light.css' %}" />#}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/portfolio/data_analysis/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/portfolio/site_wide.css' %}" />
+{#    <!--[if lte IE 6]>#}
+{#<link rel="stylesheet" type="text/css" href="{% static 'assets/css/portfolio/data_analysis/ie6.css' %}" />#}
+
 <script type="text/javascript" src="{% static 'assets/js/portfolio/data_analysis/unitpngfix.js' %}"></script>
 <![endif]-->
 <script type="text/javascript" src="{% static 'assets/js/portfolio/data_analysis/javascript.js' %}"></script>
@@ -19,7 +22,7 @@
 <body>
 <!-- BEGIN wrapper -->
 <div id="wrapper">
-  <p class="rss"> <a href="#">Home</a></p>
+  <p class="rss"> <a href="{% url 'senai' %}">Home</a> | <a href="mailto:samueleffiong80@gmail.com">Contact Us</a> </p>
   <!-- BEGIN header -->
   <div id="header">
     <h1><a href="{% url 'data-analysis' data.slug %}">{{ company_name }}</a></h1>
@@ -35,37 +38,16 @@
           <h2>Blog</h2>
       {% endblock tags %}
       <div class="break"></div>
-      <div class="featured-img">
-        <div id="featured">
+        <h1 style="margin: 20px 15px">{{ data.title }}</h1>
+        <div class="featured-img">
+          <div id="featured">
           <div class="featured">
             <ul class="photo">
               {% block feature_img %}
-                  <li class="first"><img src="{% static 'assets/images/portfolio/data_analysis/are_they_among_us/two_people_shaking_hands.jpeg' %}" alt="" /></li>
-                  <li><img src="{% static 'assets/images/portfolio/data_analysis/are_they_among_us/pocket_watch_2.jpg' %}" alt="" /></li>
-                  <li><img src="{% static 'assets/images/portfolio/data_analysis/thumb02.jpg' %}" alt="" /></li>
               {% endblock feature_img %}
             </ul>
             <ul class="text">
                 {% block feature_text %}
-                  <li class="first">
-                    <h1 style="color: red; font-size: 3em; margin-bottom: 15px">Are They Among Us?</h1>
-                    <p style="font-size: 1.1em">
-                        80% of victims who are women are assaulted in their homes. Who are
-                        these assailants, and do they know the victims? Could they be siblings,
-                        brothers, parents or hopefully total strangers?
-                        <br/><br/>
-
-                        Or do that really matters?
-                    </p>
-                  </li>
-                  <li>
-                    <h2>Art Gallery and Fashion Showroom 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse interdum. Donec tristique dolor nec nisi. Ut faucibus metus non orci. Etiam posuere netus, libero condimentum eu. Aenean a ut. Elit aliquet porttitor. Donec tristique dolor nec nisi. Ut faucibus metus non orci.</p>
-                  </li>
-                  <li>
-                    <h2>Art Gallery and Fashion Showroom 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse interdum. Donec tristique dolor nec nisi. Ut faucibus metus non orci. Etiam posuere netus, libero condimentum eu. Aenean a ut. Elit aliquet porttitor. Donec tristique dolor nec nisi. Ut faucibus metus non orci.</p>
-                  </li>
                 {% endblock feature_text %}
             </ul>
           </div>
@@ -113,7 +95,11 @@
         <h2>Download</h2>
         <div class="break"></div>
         <p class="meta_description">
-            Download dataset <a href="{{ data.download_link }}" target="_blank">here.</a>
+            {% if data.download_link is None %}
+                Not available
+            {% else %}
+                Download dataset <a href="{{ data.download_link }}" target="_blank">here.</a>
+            {% endif %}
         </p>
         <div class="break"></div>
       </div>
@@ -123,8 +109,13 @@
         <h2>About</h2>
         <div class="break"></div>
         <p class="meta_description">
-            {{ company_name }} is a software company dedicated to building websites with AI capabilities using
-            state of the art AI technologies.
+            {{ company_name }} is an AI start-up company dedicated to helping you stay ahead of the
+            curve with top analytic technologies by getting the insight you need from your data
+            to make better data-driven decision. <br><br>
+
+            Build a telegram chatbot to moderate or automatically notify users on any telegram
+            group you add it to.
+
         </p>
         <div class="break"></div>
       </div>
@@ -136,14 +127,7 @@
   <!-- END body -->
   <!-- BEGIN footer -->
   <div id="footer">
-      <p>Copyright &copy; <span id="date"></span> -  <a href="#">{{ company_name }}</a>: Software with an AI mindset &middot; All Rights Reserved</p>
-      <script>
-          date_span = document.getElementById('date');
-          date = new Date();
-
-          date_span.textContent = String(date.getFullYear());
-
-      </script>
+      {% include 'include/copyright.html' %}
   </div>
   <!-- END footer -->
 </div>

@@ -627,7 +627,39 @@ h2.title {
 	margin-bottom: 20px;
 }
 
-.bullets li{
+.block_text {
+	margin-bottom: 15px;
+}
+
+.block_text_code {
+	margin: 15px 0;
+}
+
+.meta_description {
+	margin: 10px 20px;
+	text-align: justify;
+	font-size: 1.1em;
+	line-height: 25px;
+}
+
+.table-content {
+	border-collapse: collapse;
 	font-size: 1.3em;
-	margin: 25px 40px;
+	line-height: 25px;
+}
+
+.table-content td, .table-content th {
+	padding: 5px;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	height: 40px;
+}
+
+.table-content tr:nth-child(2n+2) {
+	background-color: rgba(128, 128, 128, 0.37);
+}
+
+.code_content {
+	/*margin-top: 20px;*/
+	/*margin-bottom: 20px;*/
 }
